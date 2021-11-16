@@ -1,7 +1,7 @@
 const URL= 'https://rickandmortyapi.com/api/character/';
 const main=document.querySelector("#main")
 const characterOptions=document.querySelector("#characterOptions")
-const allCharacters=document.querySelector('allCharacters')
+const allCharacters=document.querySelector('#allCharacters')
 
 function validateUrl(){
     fetch(URL)
@@ -22,19 +22,22 @@ validateUrl()
 
 function createCard(data){
     const bigCard=document.createElement('div');
-    bigCard.classList.add('bigCard')
     const cardBackground=document.createElement('div');
-    cardBackground.classList.add('cardBackground');
-    const imgDiv=document.createElement('div');
-    imgDiv.classList.add('imgDiv');
+    const img=document.createElement('img');
     const nameCharacter=document.createElement('p');
-    nameCharacter.classList.add('nameCharacter');
 
-    imgDiv.src=data.image;
+
+    nameCharacter.classList.add('nameCharacter');
+    img.classList.add('img');
+    cardBackground.classList.add('cardBackground');
+    bigCard.classList.add('bigCard')
+
+
+    img.src=data.image;
     nameCharacter.textContent=data.name;
 
     bigCard.appendChild(cardBackground);
-    bigCard.appendChild(imgDiv);
+    bigCard.appendChild(img);
     bigCard.appendChild(nameCharacter);
     main.appendChild(bigCard);
 
@@ -48,7 +51,7 @@ function renderCharacters(){
     .then((response) => response.json())
     .then((data) => {
         const characterselected=characterOptions.value;
-        if(characterselected==allCharacters.value){
+        if(characterselected===allCharacters.value){
             main.innerHTML="";
             return data.results.map(items => {
                 createCard(items)
@@ -56,7 +59,7 @@ function renderCharacters(){
         }
         else {
             return data.results.map(items => {
-                if (items.name === op) {
+                if (items.name == characterselected) {
                     main.innerHTML = ""
                     createCard(items)
                 }
@@ -66,6 +69,6 @@ function renderCharacters(){
     .catch(error => console.log(error))
 }
 
-renderCharacters()
 
 console.log('hola')
+console.log('Hola Karen, buenos dias')
