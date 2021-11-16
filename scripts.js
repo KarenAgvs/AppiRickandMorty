@@ -22,21 +22,19 @@ validateUrl()
 
 function createCard(data){
     const bigCard=document.createElement('div');
-    const cardBackground=document.createElement('div');
     const img=document.createElement('img');
     const nameCharacter=document.createElement('p');
 
 
     nameCharacter.classList.add('nameCharacter');
     img.classList.add('img');
-    cardBackground.classList.add('cardBackground');
     bigCard.classList.add('bigCard')
 
 
     img.src=data.image;
     nameCharacter.textContent=data.name;
 
-    bigCard.appendChild(cardBackground);
+    
     bigCard.appendChild(img);
     bigCard.appendChild(nameCharacter);
     main.appendChild(bigCard);
