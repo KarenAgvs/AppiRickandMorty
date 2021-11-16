@@ -12,6 +12,9 @@
     width: 15rem;
     border-radius: 3px;
     margin: 8px;
+    margin:auto;
+    margin-top:10px;
+    margin-bottom:15px;
 }
 
 #characterOptions{
