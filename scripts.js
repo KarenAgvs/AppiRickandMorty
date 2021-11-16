@@ -66,4 +66,6 @@ function renderCharacters(){
     .catch(error => console.log(error))
 }
 
+renderCharacters()
+
 console.log('hola')

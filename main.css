@@ -3,3 +3,11 @@
     height: 20rem;
     width: 14rem;
 }
+
+#characterOptions{
+    background: transparent;
+    border: rgb(9, 10, 43) 1px solid;
+    padding: 1%;
+    border-radius: 3px;
+    text-align: center;
+}
